@@ -7,10 +7,7 @@ const Login = (props) => {
   let { width, height } = useWindowDimensions();
   let styles = _styles({ width, height });
 
-  return (
-    <View style={styles.container}>
-    </View>
-  );
+  return <View style={styles.container}></View>;
 };
 
 const mapStateToProps = (state) => ({

@@ -1,13 +1,13 @@
 import { useWindowDimensions } from "react-native";
 
 export const FontsConfig = {
-  Black: require("../assets/fonts/Rubik-Black.ttf"),
-  Bold: require("../assets/fonts/Rubik-Bold.ttf"),
-  ExtraBold: require("../assets/fonts/Rubik-ExtraBold.ttf"),
-  Light: require("../assets/fonts/Rubik-Light.ttf"),
-  Medium: require("../assets/fonts/Rubik-Medium.ttf"),
-  Regular: require("../assets/fonts/Rubik-Regular.ttf"),
-  SemiBold: require("../assets/fonts/Rubik-SemiBold.ttf"),
+  Black: require("../assets/fonts/Poppins-Black.ttf"),
+  Bold: require("../assets/fonts/Poppins-Bold.ttf"),
+  ExtraBold: require("../assets/fonts/Poppins-ExtraBold.ttf"),
+  Light: require("../assets/fonts/Poppins-Light.ttf"),
+  Medium: require("../assets/fonts/Poppins-Medium.ttf"),
+  Regular: require("../assets/fonts/Poppins-Regular.ttf"),
+  SemiBold: require("../assets/fonts/Poppins-SemiBold.ttf"),
 };
 
 export const get12FormatTime = (time) => {

@@ -1,13 +1,15 @@
 import { Platform, StatusBar, StyleSheet } from "react-native";
 import { RFValue as rf } from "react-native-responsive-fontsize";
 import { getPercent } from "../../middleware";
+import { light } from "../../scheme";
 
 //standardButton Styles starts here
 export const standardButtonStyles = ({ width, height }) =>
   StyleSheet.create({
     container: {
-      height: getPercent(5, width),
-      backgroundColor: "#9CE3AE",
+      height: getPercent(7, height),
+      width: getPercent(90, width),
+      backgroundColor: light.btnbody,
       borderRadius: 8,
       shadowColor: "#000",
       shadowOffset: {
@@ -19,12 +21,11 @@ export const standardButtonStyles = ({ width, height }) =>
       elevation: 6,
       alignItems: "center",
       justifyContent: "center",
-      marginRight: getPercent(3, width),
     },
     text: {
       fontSize: rf(15),
-      fontFamily: "SemiBold",
-      color: "#000000",
+      fontFamily: "Medium",
+      color: light.BtnText,
     },
   });
 
