@@ -27,7 +27,9 @@ const Login = (props) => {
     require("../../assets/icons/fb.png"),
     require("../../assets/icons/twitter.png"),
   ];
-
+  const _HandleLogin = () => {
+    props?.navigation?.navigate("Home");
+  };
   return (
     <View style={styles.container}>
       <KeyboardAwareScrollView showsVerticalScrollIndicator={false}>
@@ -57,7 +59,7 @@ const Login = (props) => {
           </Text>
         </View>
         <View style={styles.btnwrapper}>
-          <StandardButton title={"Sign in"} />
+          <StandardButton title={"Sign in"} onPress={_HandleLogin} />
         </View>
         <View style={styles.alreadywrapper}>
           <Text style={styles.alreadytext}>

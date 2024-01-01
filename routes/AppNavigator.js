@@ -19,6 +19,7 @@ import Riderenterfamilynumber from "../screens/Riderenterfamilynumber/Riderenter
 import Riderfamilyentercode from "../screens/Riderfamilyentercode/Riderfamilyentercode";
 import Rideridentification from "../screens/Rideridentification/Rideridentification";
 import Rideridverification from "../screens/Rideridverification/Rideridverification";
+import Home from "../screens/Home/Home";
 
 const { Navigator, Screen } = createStackNavigator();
 
@@ -52,6 +53,7 @@ function AppNavigation() {
       <Screen name="Riderfamilyentercode" component={Riderfamilyentercode} />
       <Screen name="Rideridentification" component={Rideridentification} />
       <Screen name="Rideridverification" component={Rideridverification} />
+      <Screen name="Home" component={Home} />
     </Navigator>
   );
 }

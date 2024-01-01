@@ -7,7 +7,7 @@ import { light } from "../../scheme";
 export const styles = ({ width, height }) =>
   StyleSheet.create({
     container: {
-      height: getPercent(10, height),
+      height: getPercent(9, height),
       marginVertical: 10,
       flexDirection: "row",
       alignItems: "center",

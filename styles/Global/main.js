@@ -3,6 +3,59 @@ import { RFValue as rf } from "react-native-responsive-fontsize";
 import { getPercent } from "../../middleware";
 import { light } from "../../scheme";
 
+export const Bottommenustyles = ({ width, height }) =>
+  StyleSheet.create({
+    container: {
+      paddingHorizontal: getPercent(5, width),
+      height: getPercent(9, height),
+      width: getPercent(90, width),
+      borderRadius: 100,
+      alignSelf: "center",
+      flexDirection: "row",
+      alignItems: "center",
+      position: "absolute",
+      zIndex: 9,
+      justifyContent: "space-between",
+      bottom: 15,
+      backgroundColor: light?.btnbody,
+      paddingHorizontal: getPercent(5, width),
+    },
+    iconbody: {
+      height: getPercent(3, height),
+      width: getPercent(3, height),
+      overflow: "hidden",
+    },
+  });
+
+export const Homeheaderstyles = ({ width, height }) =>
+  StyleSheet.create({
+    container: {
+      paddingHorizontal: getPercent(5, width),
+      height: getPercent(10, height),
+      width: getPercent(100, width),
+      flexDirection: "row",
+      alignItems: "center",
+      position: "absolute",
+      zIndex: 9,
+      justifyContent: "space-between",
+    },
+    menubaricon: {
+      height: getPercent(4, height),
+      width: getPercent(4, height),
+      overflow: "hidden",
+      borderRadius: 5,
+    },
+    bellicon: {
+      height: getPercent(4, height),
+      width: getPercent(4, height),
+      overflow: "hidden",
+      borderRadius: 5,
+      justifyContent: "center",
+      alignItems: "center",
+      backgroundColor: light?.background,
+    },
+  });
+
 export const Commonheaderstyles = ({ width, height }) =>
   StyleSheet.create({
     container: {
@@ -35,7 +88,7 @@ export const Gloabliconstyles = ({ width, height }) =>
 export const Globalfieldsstyles = ({ width, height }) =>
   StyleSheet.create({
     container: {
-      height: getPercent(7, height),
+      height: getPercent(6.5, height),
       width: getPercent(90, width),
       alignSelf: "center",
       borderRadius: 5,

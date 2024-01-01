@@ -23,7 +23,7 @@ export const styles = ({ width, height }) =>
       height: getPercent(10, height),
     },
     customstyles: {
-      height: getPercent(7, height),
+      height: getPercent(6.5, height),
       width: getPercent(90, width),
       alignSelf: "center",
       borderRadius: 10,
