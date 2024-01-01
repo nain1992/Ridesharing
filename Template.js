@@ -1,4 +1,10 @@
-import { Text, View, useWindowDimensions } from "react-native";
+import {
+  Text,
+  View,
+  useWindowDimensions,
+  TouchableOpacity,
+  Image,
+} from "react-native";
 import { connect } from "react-redux";
 import { styles as _styles } from "../../styles/ScreenName/main";
 

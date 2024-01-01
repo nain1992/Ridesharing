@@ -3,11 +3,59 @@ import { RFValue as rf } from "react-native-responsive-fontsize";
 import { getPercent } from "../../middleware";
 import { light } from "../../scheme";
 
+export const Gloabliconstyles = ({ width, height }) =>
+  StyleSheet.create({
+    container: {
+      height: getPercent(2.5, height),
+      width: getPercent(2.5, height),
+      overflow: "hidden",
+    },
+  });
+
+export const Globalfieldsstyles = ({ width, height }) =>
+  StyleSheet.create({
+    container: {
+      height: getPercent(7, height),
+      width: getPercent(90, width),
+      alignSelf: "center",
+      borderRadius: 5,
+      borderWidth: 1,
+      borderColor: light?.fieldbody,
+      justifyContent: "center",
+      paddingHorizontal: 10,
+      marginVertical: 10,
+    },
+    inputstyles: {
+      fontFamily: "Medium",
+      fontSize: rf(14),
+      color: light?.standardtext,
+    },
+  });
+
+export const Globalheaderstyles = ({ width, height }) =>
+  StyleSheet.create({
+    container: {
+      paddingHorizontal: getPercent(5, width),
+      height: getPercent(10, height),
+      justifyContent: "center",
+    },
+    backbtnbody: {
+      flexDirection: "row",
+      alignItems: "center",
+    },
+    backtext: {
+      fontFamily: "Regular",
+      fontSize: rf(14),
+      color: light?.LableText,
+    },
+  });
+
 //standardButton Styles starts here
 export const standardButtonStyles = ({ width, height }) =>
   StyleSheet.create({
     container: {
       height: getPercent(7, height),
+
       width: getPercent(90, width),
       backgroundColor: light.btnbody,
       borderRadius: 8,

@@ -7,35 +7,39 @@ import {
   Image,
 } from "react-native";
 import { connect } from "react-redux";
-import { styles as _styles } from "../../styles/Login/main";
+import { styles as _styles } from "../../styles/Register/main";
 import Globalheader from "../../globalComponents/Globalheader";
 import Globalfields from "../../globalComponents/Globalfields";
 import Globalicons from "../../globalComponents/Globalicons";
 import StandardButton from "../../globalComponents/StandardButton";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
-const Login = (props) => {
+const Riderregister = (props) => {
   let {} = props;
   let { width, height } = useWindowDimensions();
   let styles = _styles({ width, height });
 
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  let socialicons = [
-    require("../../assets/icons/google.png"),
-    require("../../assets/icons/fb.png"),
-    require("../../assets/icons/twitter.png"),
-  ];
-
+  const _handleSignup = () => {
+    props?.navigation?.navigate("Riderenterphone");
+  };
   return (
     <View style={styles.container}>
       <KeyboardAwareScrollView showsVerticalScrollIndicator={false}>
         <Globalheader navigation={props?.navigation} />
         <View style={styles.signupwrapper}>
-          <Text style={styles.signuptext}>Sign in</Text>
+          <Text style={styles.signuptext}>Sign up</Text>
         </View>
         <View style={styles.fieldwrapper}>
+          <Globalfields
+            multiline
+            placeholder="Name"
+            onChangeText={(val) => setName(val)}
+            value={name}
+          />
           <Globalfields
             multiline
             placeholder="Email"
@@ -48,7 +52,6 @@ const Login = (props) => {
             onChangeText={(val) => setPassword(val)}
             value={password}
           />
-          <Text style={styles.forgottext}>Forgot Password?</Text>
         </View>
         <View style={styles.termswrapper}>
           <Globalicons image={require("../../assets/icons/5.png")} />
@@ -57,28 +60,12 @@ const Login = (props) => {
           </Text>
         </View>
         <View style={styles.btnwrapper}>
-          <StandardButton title={"Sign in"} />
+          <StandardButton title={"Sign up"} onPress={_handleSignup} />
         </View>
         <View style={styles.alreadywrapper}>
           <Text style={styles.alreadytext}>
-            Dont have an account? <Text style={styles.signup}>Sign up</Text>
+            Already have an account? <Text style={styles.signup}>Sign in</Text>
           </Text>
-        </View>
-        <View style={styles.socialbuttnwrapper}>
-          <Text style={styles.orsigninwith}>Or sign in with</Text>
-          <View style={styles.iconwrapper}>
-            {socialicons?.map((item, index) => {
-              return (
-                <TouchableOpacity key={index} style={styles.iconbody}>
-                  <Image
-                    source={item}
-                    style={{ height: "100%", width: "100%" }}
-                    resizeMode="contain"
-                  />
-                </TouchableOpacity>
-              );
-            })}
-          </View>
         </View>
       </KeyboardAwareScrollView>
     </View>
@@ -88,4 +75,4 @@ const Login = (props) => {
 const mapStateToProps = (state) => ({
   errors: state.errors.errors,
 });
-export default connect(mapStateToProps, {})(Login);
+export default connect(mapStateToProps, {})(Riderregister);
