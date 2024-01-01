@@ -45,7 +45,7 @@ const Riderfamilyentercode = (props) => {
       <View style={styles.btnwrapper}>
         <StandardButton
           title={"Verify"}
-          // onPress={() => props?.navigation?.navigate("Riderenterfamilynumber")}
+          onPress={() => props?.navigation?.navigate("Rideridentification")}
         />
       </View>
     </View>

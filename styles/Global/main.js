@@ -3,6 +3,26 @@ import { RFValue as rf } from "react-native-responsive-fontsize";
 import { getPercent } from "../../middleware";
 import { light } from "../../scheme";
 
+export const Commonheaderstyles = ({ width, height }) =>
+  StyleSheet.create({
+    container: {
+      paddingHorizontal: getPercent(5, width),
+      height: getPercent(12, height),
+      flexDirection: "row",
+      alignItems: "center",
+    },
+    textbody: {
+      flex: 1,
+      justifyContent: "center",
+      alignItems: "center",
+    },
+    titletext: {
+      fontFamily: "Medium",
+      fontSize: rf(18),
+      color: light?.LableText,
+    },
+  });
+
 export const Gloabliconstyles = ({ width, height }) =>
   StyleSheet.create({
     container: {
