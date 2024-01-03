@@ -43,7 +43,7 @@ const Onboading3 = (props) => {
 
       <View style={styles.btnwrapper}>
         <TouchableOpacity
-          // onPress={() => props?.navigation?.navigate("Welcome")}
+          onPress={() => props?.navigation?.navigate("Register")}
           style={styles.btnbody}
         >
           <Image

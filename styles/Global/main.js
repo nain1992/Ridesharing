@@ -21,8 +21,8 @@ export const Bottommenustyles = ({ width, height }) =>
       paddingHorizontal: getPercent(5, width),
     },
     iconbody: {
-      height: getPercent(3, height),
-      width: getPercent(3, height),
+      height: getPercent(2.5, height),
+      width: getPercent(2.5, height),
       overflow: "hidden",
     },
   });
@@ -119,6 +119,30 @@ export const Globalheaderstyles = ({ width, height }) =>
     backtext: {
       fontFamily: "Regular",
       fontSize: rf(14),
+      color: light?.LableText,
+    },
+  });
+export const Notificationsheaderstyles = ({ width, height }) =>
+  StyleSheet.create({
+    container: {
+      paddingHorizontal: getPercent(5, width),
+      height: getPercent(10, height),
+      width: getPercent(100, width),
+      flexDirection: "row",
+      alignItems: "center",
+    },
+    backbtnbody: {
+      flexDirection: "row",
+      alignItems: "center",
+    },
+    backtext: {
+      fontFamily: "Regular",
+      fontSize: rf(12),
+      color: light?.LableText,
+    },
+    title: {
+      fontFamily: "Medium",
+      fontSize: rf(18),
       color: light?.LableText,
     },
   });

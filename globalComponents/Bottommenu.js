@@ -1,16 +1,14 @@
 import { useEffect, useState } from "react";
 import {
-  Text,
   View,
   useWindowDimensions,
   Image,
   TouchableOpacity,
-  ScrollView,
 } from "react-native";
 import { connect } from "react-redux";
 import { Bottommenustyles } from "../styles/Global/main";
 
-const Home = (props) => {
+const Bottommenu = (props) => {
   let { active } = props;
 
   let { width, height } = useWindowDimensions();
@@ -26,10 +24,10 @@ const Home = (props) => {
     },
     {
       image:
-        active === "Home"
-          ? require("../assets/bottommenu/2.png")
-          : require("../assets/bottommenu/6.png"),
-      onPress: () => props?.navigation?.navigate(""),
+        active === "History"
+          ? require("../assets/bottommenu/6.png")
+          : require("../assets/bottommenu/2.png"),
+      onPress: () => props?.navigation?.navigate("History"),
     },
     {
       image:
@@ -71,4 +69,4 @@ const Home = (props) => {
 const mapStateToProps = (state) => ({
   errors: state.errors.errors,
 });
-export default connect(mapStateToProps, {})(Home);
+export default connect(mapStateToProps, {})(Bottommenu);

@@ -36,6 +36,7 @@ const Welcome = (props) => {
           title={"Create an acocunt"}
         />
         <StandardButton
+          onPress={() => props?.navigation?.navigate("Login")}
           customStyles={styles.custom}
           textStyles={{
             color: light?.btnbody,

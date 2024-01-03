@@ -20,6 +20,11 @@ import Riderfamilyentercode from "../screens/Riderfamilyentercode/Riderfamilyent
 import Rideridentification from "../screens/Rideridentification/Rideridentification";
 import Rideridverification from "../screens/Rideridverification/Rideridverification";
 import Home from "../screens/Home/Home";
+import Notifications from "../screens/Notifications/Notifications";
+import History from "../screens/History/History";
+import Riderhome from "../screens/Riderhome/Riderhome";
+import Transport from "../screens/Transport/Transport";
+import Availablecars from "../screens/Availablecars/Availablecars";
 
 const { Navigator, Screen } = createStackNavigator();
 
@@ -27,6 +32,10 @@ function AppNavigation() {
   return (
     <Navigator screenOptions={{ headerShown: false, animationEnabled: false }}>
       <Screen name="Onboarding1" component={Onboarding1} />
+      <Screen name="Riderhome" component={Riderhome} />
+      <Screen name="Home" component={Home} />
+      <Screen name="History" component={History} />
+      <Screen name="Notifications" component={Notifications} />
       <Screen name="Onboarding2" component={Onboarding2} />
       <Screen name="Onboarding3" component={Onboarding3} />
       <Screen name="Welcome" component={Welcome} />
@@ -53,7 +62,8 @@ function AppNavigation() {
       <Screen name="Riderfamilyentercode" component={Riderfamilyentercode} />
       <Screen name="Rideridentification" component={Rideridentification} />
       <Screen name="Rideridverification" component={Rideridverification} />
-      <Screen name="Home" component={Home} />
+      <Screen name="Transport" component={Transport} />
+      <Screen name="Availablecars" component={Availablecars} />
     </Navigator>
   );
 }

@@ -42,7 +42,10 @@ const Rideridverification = (props) => {
         <Text style={styles.instructionstext}>Hold the camera stable</Text>
       </View>
       <View style={styles.btnwrapper}>
-        <StandardButton title={"Take a photo of front side"} />
+        <StandardButton
+          onPress={() => props?.navigation?.navigate("Riderhome")}
+          title={"Take a photo of front side"}
+        />
       </View>
     </View>
   );

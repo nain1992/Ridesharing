@@ -63,7 +63,13 @@ const Login = (props) => {
         </View>
         <View style={styles.alreadywrapper}>
           <Text style={styles.alreadytext}>
-            Dont have an account? <Text style={styles.signup}>Sign up</Text>
+            Dont have an account?{" "}
+            <Text
+              onPress={() => props?.navigation?.navigate("Register")}
+              style={styles.signup}
+            >
+              Sign up
+            </Text>
           </Text>
         </View>
         <View style={styles.socialbuttnwrapper}>

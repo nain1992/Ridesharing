@@ -16,7 +16,7 @@ const Onboading2 = (props) => {
   return (
     <View style={styles.container}>
       <TouchableOpacity
-        onPress={() => props?.navigation?.navigate("")}
+        onPress={() => props?.navigation?.navigate("Onboarding3")}
         style={styles.skipbtnbody}
       >
         <Text style={styles.skiptext}>Skip</Text>

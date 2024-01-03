@@ -16,6 +16,7 @@ import Bottommenu from "../../globalComponents/Bottommenu";
 import Locationsearch from "./components/Locationsearch";
 import Selectaddressmodel from "./components/Selectaddressmodel";
 import Sidemenu from "./components/Sidemenu";
+import Selecttimemodel from "./components/Selecttimemodel";
 
 const Home = (props) => {
   let {} = props;
@@ -25,6 +26,7 @@ const Home = (props) => {
   const [location, setLocation] = useState(null);
   const [ismodelvisible, setIsmodelvisible] = useState(false);
   const [issidemodelvisible, setIssidemodelvisible] = useState(false);
+  const [istimevisible, setIstimevisible] = useState(false);
 
   useEffect(() => {
     (async () => {
@@ -67,16 +69,23 @@ const Home = (props) => {
         </View>
       )}
       <Bottommenu active={"Home"} navigation={props?.navigation} />
-      <Locationsearch
-        onNextpress={() => props?.navigation?.navigate("Transport")}
-        onPress={() => setIsmodelvisible(true)}
-      />
+      <Locationsearch onPress={() => setIsmodelvisible(true)} />
 
       {ismodelvisible && (
-        <Selectaddressmodel onclosepress={() => setIsmodelvisible(false)} />
+        <Selectaddressmodel
+          onclosepress={() => setIsmodelvisible(false)}
+          onBtnPress={() => {
+            setIsmodelvisible(false);
+            setIstimevisible(true);
+          }}
+        />
       )}
       {issidemodelvisible && (
         <Sidemenu onBackPress={() => setIssidemodelvisible(false)} />
+      )}
+
+      {istimevisible && (
+        <Selecttimemodel onclosepress={() => setIstimevisible(false)} />
       )}
     </View>
   );

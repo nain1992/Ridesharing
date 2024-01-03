@@ -26,9 +26,10 @@ export const styles = ({ width, height }) =>
       height: getPercent(6.5, height),
       width: getPercent(90, width),
       alignSelf: "center",
-      borderRadius: 10,
+      borderRadius: 5,
       borderWidth: 1,
       borderColor: light?.fieldbody,
+
       alignItems: "center",
       marginVertical: 10,
       overflow: "hidden",
