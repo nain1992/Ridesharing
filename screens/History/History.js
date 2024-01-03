@@ -22,15 +22,27 @@ const History = (props) => {
   let styles = _styles({ width, height });
 
   const [activebtn, setActivebtn] = useState(0);
-  const [upcoming, setUpcoming] = useState(true);
-  const [completed, setCompleted] = useState();
-  const [cancelled, setCancelled] = useState();
+  const [upcoming, setUpcoming] = useState(false);
+  const [completed, setCompleted] = useState(false);
+  const [cancelled, setCancelled] = useState(false);
 
   let btns = ["Upcoming", "Completed", "Cancelled"];
 
   const _handleactivebtn = (index) => {
-    console.log(btns);
     setActivebtn(index);
+    if (btns?.[index] === "Upcoming") {
+      setUpcoming(true);
+      setCompleted(false);
+      setCancelled(false);
+    } else if (btns?.[index] === "Completed") {
+      setCompleted(true);
+      setUpcoming(false);
+      setCancelled(false);
+    } else if (btns?.[index] === "Cancelled") {
+      setCancelled(true);
+      setUpcoming(false);
+      setCompleted(false);
+    }
   };
 
   return (
@@ -68,42 +80,51 @@ const History = (props) => {
         })}
       </View>
       <KeyboardAwareScrollView showsVerticalScrollIndicator={false}>
-        <View style={styles.wrapper}>
-          {[1, 2, 3, 4, 5, 5]?.map((item, index) => {
-            return (
-              <Upcoming
-                key={index}
-                name={"Nate"}
-                area={"Mustang Shelby GT"}
-                time={"Today at 09:20 am"}
-              />
-            );
-          })}
-          {/* {activebtn === "Completed"
-            ? [1, 2, 3, 4, 5, 5]?.map((item, index) => {
-                return (
-                  <Upcoming
-                    key={index}
-                    name={"Nate"}
-                    area={"Mustang Shelby GT"}
-                    time={"Done"}
-                  />
-                );
-              })
-            : null}
-          {activebtn === "Cancelled"
-            ? [1, 2, 3, 4, 5, 5]?.map((item, index) => {
-                return (
-                  <Upcoming
-                    key={index}
-                    name={"Nate"}
-                    area={"Mustang Shelby GT"}
-                    time={"Cancel"}
-                  />
-                );
-              })
-            : null} */}
-        </View>
+        {upcoming ? (
+          <View style={styles.wrapper}>
+            {[1, 2, 3, 4, 5, 5]?.map((item, index) => {
+              return (
+                <Upcoming
+                  key={index}
+                  name={"Nate"}
+                  area={"Mustang Shelby GT"}
+                  time={"Today at 09:20 am"}
+                  color={light?.standardtext}
+                />
+              );
+            })}
+          </View>
+        ) : null}
+        {completed ? (
+          <View style={styles.wrapper}>
+            {[1, 2, 3, 4, 5, 5]?.map((item, index) => {
+              return (
+                <Upcoming
+                  key={index}
+                  name={"Nate"}
+                  area={"Mustang Shelby GT"}
+                  time={"Done"}
+                  color={light?.btnbody}
+                />
+              );
+            })}
+          </View>
+        ) : null}
+        {cancelled ? (
+          <View style={styles.wrapper}>
+            {[1, 2, 3, 4, 5, 5]?.map((item, index) => {
+              return (
+                <Upcoming
+                  key={index}
+                  name={"Nate"}
+                  area={"Mustang Shelby GT"}
+                  time={"Cancel"}
+                  color={"#D32F2F"}
+                />
+              );
+            })}
+          </View>
+        ) : null}
       </KeyboardAwareScrollView>
       <Bottommenu active={"History"} navigation={props?.navigation} />
     </View>

@@ -27,13 +27,14 @@ const Availablecars = (props) => {
         <Text style={styles.results}>18 cars found</Text>
       </View>
       <KeyboardAwareScrollView showsVerticalScrollIndicator={false}>
-        <Resultsforsearch />
-        <Resultsforsearch />
-        <Resultsforsearch />
-        <Resultsforsearch />
-        <Resultsforsearch />
-        <Resultsforsearch />
-        <Resultsforsearch />
+        {[1, 2, 2, 2, 2, 2]?.map((item, index) => {
+          return (
+            <Resultsforsearch
+              onBtnPress={() => props?.navigation?.navigate("Requestbooking")}
+              key={index}
+            />
+          );
+        })}
       </KeyboardAwareScrollView>
     </View>
   );

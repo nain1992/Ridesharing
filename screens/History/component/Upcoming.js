@@ -12,7 +12,7 @@ import { styles as _styles } from "../../../styles/History/Upcoming";
 import { light } from "../../../scheme";
 
 const Upcoming = (props) => {
-  let { name, area, time } = props;
+  let { name, area, time, color } = props;
 
   let { width, height } = useWindowDimensions();
   let styles = _styles({ width, height });
@@ -23,7 +23,16 @@ const Upcoming = (props) => {
         <Text style={styles.nametext}>{name}</Text>
         <Text style={styles.mustandtext}>{area}</Text>
       </View>
-      <Text style={styles.timetext}>{time}</Text>
+      <Text
+        style={[
+          styles.timetext,
+          {
+            color: color,
+          },
+        ]}
+      >
+        {time}
+      </Text>
     </View>
   );
 };
