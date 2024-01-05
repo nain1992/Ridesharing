@@ -38,12 +38,20 @@ import Profile from "../screens/Profile/Profile";
 import Addcar from "../screens/Addcar/Addcar";
 import Request from "../screens/Request/Request";
 import Locationscreen from "../screens/Locationscreen/Locationscreen";
+import Documentphoto from "../screens/Documentphoto/Documentphoto";
+import Rideridverification2 from "../screens/Rideridverification2/Rideridverification2";
+import Lisenceverification from "../screens/Lisenceverification/Lisenceverification";
 
 const { Navigator, Screen } = createStackNavigator();
 
 function AppNavigation() {
   return (
     <Navigator screenOptions={{ headerShown: false, animationEnabled: false }}>
+      <Screen name="Onboarding1" component={Onboarding1} />
+      <Screen name="Lisenceverification" component={Lisenceverification} />
+      <Screen name="Rideridverification" component={Rideridverification} />
+      <Screen name="Documentphoto" component={Documentphoto} />
+      <Screen name="Rideridverification2" component={Rideridverification2} />
       <Screen name="Locationscreen" component={Locationscreen} />
       <Screen name="Request" component={Request} />
       <Screen name="Addcar" component={Addcar} />
@@ -60,7 +68,6 @@ function AppNavigation() {
       <Screen name="History" component={History} />
       <Screen name="Requestbooking" component={Requestbooking} />
       <Screen name="Availablecars" component={Availablecars} />
-      <Screen name="Onboarding1" component={Onboarding1} />
       <Screen name="Home" component={Home} />
       <Screen name="Notifications" component={Notifications} />
       <Screen name="Onboarding2" component={Onboarding2} />
@@ -88,7 +95,6 @@ function AppNavigation() {
       />
       <Screen name="Riderfamilyentercode" component={Riderfamilyentercode} />
       <Screen name="Rideridentification" component={Rideridentification} />
-      <Screen name="Rideridverification" component={Rideridverification} />
       <Screen name="Transport" component={Transport} />
     </Navigator>
   );

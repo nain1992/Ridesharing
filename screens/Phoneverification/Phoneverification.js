@@ -1,12 +1,5 @@
 import { useState } from "react";
-import {
-  Text,
-  View,
-  useWindowDimensions,
-  TouchableOpacity,
-  Image,
-  TextInput,
-} from "react-native";
+import { Text, View, useWindowDimensions } from "react-native";
 import { connect } from "react-redux";
 import { styles as _styles } from "../../styles/Phoneverification/main";
 import Globalheader from "../../globalComponents/Globalheader";

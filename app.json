@@ -1,5 +1,13 @@
 {
   "expo": {
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow $(PRODUCT_NAME) to access your camera."
+        }
+      ]
+    ],
     "name": "Ridesharing",
     "slug": "ridesharing",
     "version": "1.0.0",
@@ -11,7 +19,9 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true
     },
@@ -19,7 +29,11 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -28,7 +42,12 @@
       "policy": "sdkVersion"
     },
     "updates": {
-      "url": "https://u.expo.dev/e67b01a9-e6b1-499f-96a9-92994ea95886"
+      "url": "https://u.expo.dev/d44c1246-c7a1-4c03-8c88-eeab1bb62ff4"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "d44c1246-c7a1-4c03-8c88-eeab1bb62ff4"
+      }
     }
   }
 }

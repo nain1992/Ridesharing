@@ -69,7 +69,10 @@ const Home = (props) => {
         </View>
       )}
       <Bottommenu active={"Home"} navigation={props?.navigation} />
-      <Locationsearch onPress={() => setIsmodelvisible(true)} />
+      <Locationsearch
+        onBtnPress={() => props?.navigation?.navigate("Request")}
+        onPress={() => setIsmodelvisible(true)}
+      />
 
       {ismodelvisible && (
         <Selectaddressmodel
@@ -81,7 +84,11 @@ const Home = (props) => {
         />
       )}
       {issidemodelvisible && (
-        <Sidemenu onBackPress={() => setIssidemodelvisible(false)} />
+        <Sidemenu
+          setIssidemodelvisible={setIssidemodelvisible}
+          onBackPress={() => setIssidemodelvisible(false)}
+          navigation={props?.navigation}
+        />
       )}
 
       {istimevisible && (

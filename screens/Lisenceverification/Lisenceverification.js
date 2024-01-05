@@ -6,25 +6,27 @@ import Commonheader from "../../globalComponents/Commonheader";
 import Globalicons from "../../globalComponents/Globalicons";
 import StandardButton from "../../globalComponents/StandardButton";
 
-const Rideridverification = (props) => {
+const Lisenceverification = (props) => {
   let {} = props;
   let { width, height } = useWindowDimensions();
   let styles = _styles({ width, height });
 
   return (
     <View style={styles.container}>
-      <Commonheader title={"ID Verification"} navigation={props?.navigation} />
+      <Commonheader
+        title={"License Verification"}
+        navigation={props?.navigation}
+      />
 
       <View style={styles.textwrapper}>
-        <Text style={styles.lable}>Take photo of your ID card</Text>
+        <Text style={styles.lable}>Take photo of your Art licence</Text>
         <Text style={styles.contenttext}>
-          Please provide us with a good photo of your ID card. Make sure to
-          capture both sides and photograph the ENTIRE ID in your ID card.
+          Please provide us with a good photo of your licence for verification
         </Text>
       </View>
       <View style={styles.framebody}>
         <Image
-          source={require("../../assets/icons/id1.png")}
+          source={require("../../assets/images/carr.png")}
           style={{ height: "100%", width: "100%" }}
           resizeMode="contain"
         />
@@ -45,7 +47,7 @@ const Rideridverification = (props) => {
         <StandardButton
           // onPress={() => props?.navigation?.navigate("Riderhome")}
           onPress={() => props?.navigation?.navigate("Documentphoto")}
-          title={"Take a photo of front side"}
+          title={"Take a photo "}
         />
       </View>
     </View>
@@ -55,4 +57,4 @@ const Rideridverification = (props) => {
 const mapStateToProps = (state) => ({
   errors: state.errors.errors,
 });
-export default connect(mapStateToProps, {})(Rideridverification);
+export default connect(mapStateToProps, {})(Lisenceverification);

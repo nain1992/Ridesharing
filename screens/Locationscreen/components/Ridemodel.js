@@ -11,9 +11,8 @@ import {
 } from "react-native";
 import { connect } from "react-redux";
 import { styles as _styles } from "../../../styles/Locationscreen/Ridermodel";
-import { AntDesign } from "@expo/vector-icons";
+import { AntDesign, Entypo } from "@expo/vector-icons";
 import { light } from "../../../scheme";
-import Globalicons from "../../../globalComponents/Globalicons";
 import StandardButton from "../../../globalComponents/StandardButton";
 
 const Selectaddressmodel = (props) => {
@@ -22,38 +21,6 @@ const Selectaddressmodel = (props) => {
   let { width, height } = useWindowDimensions();
   let styles = _styles({ width, height });
 
-  let recent = [
-    {
-      icon: require("../../../assets/icons/11.png"),
-      lable: "Office",
-      address: "2972 Westheimer Rd. Santa Ana, Illinois 85486",
-      km: "2.7 km",
-    },
-    {
-      icon: require("../../../assets/icons/11.png"),
-      lable: "Office",
-      address: "2972 Westheimer Rd. Santa Ana, Illinois 85486",
-      km: "2.7 km",
-    },
-    {
-      icon: require("../../../assets/icons/11.png"),
-      lable: "Office",
-      address: "2972 Westheimer Rd. Santa Ana, Illinois 85486",
-      km: "2.7 km",
-    },
-    {
-      icon: require("../../../assets/icons/11.png"),
-      lable: "Office",
-      address: "2972 Westheimer Rd. Santa Ana, Illinois 85486",
-      km: "2.7 km",
-    },
-    {
-      icon: require("../../../assets/icons/11.png"),
-      lable: "Office",
-      address: "2972 Westheimer Rd. Santa Ana, Illinois 85486",
-      km: "2.7 km",
-    },
-  ];
   return (
     <Modal transparent animationType="slide">
       <View style={{ flex: 1, backgroundColor: "#00000aaa" }}></View>
@@ -61,42 +28,63 @@ const Selectaddressmodel = (props) => {
         <TouchableOpacity onPress={onclosepress} style={styles.closeiconbody}>
           <AntDesign name="close" size={20} color={light?.standardtext} />
         </TouchableOpacity>
-        <View style={styles.pickuplocationbody}>
-          <Globalicons image={require("../../../assets/icons/pick.png")} />
-          <TextInput
-            placeholder="From"
-            placeholderTextColor={light?.fieldbody}
-            style={styles.inputstyles}
-            multiline
-          />
-        </View>
-        <View style={styles.pickuplocationbody}>
-          <Globalicons image={require("../../../assets/icons/drop.png")} />
-          <TextInput
-            placeholder="To"
-            placeholderTextColor={light?.fieldbody}
-            style={styles.inputstyles}
-            multiline
-          />
-        </View>
-        <Text style={styles.recenttext}>Recent Search</Text>
-        <ScrollView showsVerticalScrollIndicator={false}>
-          {recent?.map((item, index) => {
-            return (
-              <View key={index} style={styles.recentbody}>
-                <Globalicons image={item?.icon} />
-                <View style={styles.textbody}>
-                  <Text style={styles.recentlocationstext}>{item?.lable}</Text>
-                  <Text style={styles.recentaddresstext}>{item?.address}</Text>
-                </View>
-                <Text style={styles.kmtext}>{item?.km}</Text>
-              </View>
-            );
-          })}
-          <View style={styles.btnwrappr}>
-            <StandardButton title={"Confirm Location"} />
+        <Text style={styles.recenttext}>Your driver is coming in 3:35</Text>
+        <View style={styles.userdetailswrapper}>
+          <View style={styles.profilepic}>
+            <Image
+              source={require("../../../assets/images/user.png")}
+              style={{ height: "100%", width: "100%" }}
+              resizeMode="contain"
+            />
           </View>
-        </ScrollView>
+          <View style={{ flex: 1, paddingLeft: 10 }}>
+            <Text style={styles.nametext}>Sergio Ramasis</Text>
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
+              <Entypo name="location-pin" size={12} color="black" />
+              <Text style={styles.meterstext}>800m (5mins away)</Text>
+            </View>
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
+              <AntDesign name="star" size={12} color={light?.btnbody} />
+              <Text style={styles.meterstext}>800m (5mins away)</Text>
+            </View>
+          </View>
+          <View style={styles.carpic}>
+            <Image
+              source={require("../../../assets/images/car1.png")}
+              style={{ height: "100%", width: "100%" }}
+              resizeMode="contain"
+            />
+          </View>
+        </View>
+        <View
+          style={{
+            flexDirection: "row",
+            alignItems: "center",
+            paddingHorizontal: 10,
+            justifyContent: "space-between",
+            marginVertical: 10,
+          }}
+        >
+          <Text style={styles.recenttext}>Payment method</Text>
+          <Text style={styles.price}>$220.00</Text>
+        </View>
+        <View style={styles.recentbody}>
+          <View style={styles.cardpicturebody}>
+            <Image
+              source={require("../../../assets/icons/master.png")}
+              style={{ height: "100%", width: "100%" }}
+              resizeMode="contain"
+            />
+          </View>
+          <View style={styles.textbody}>
+            <Text style={styles.recentlocationstext}>**** **** **** 8970</Text>
+            <Text style={styles.recentaddresstext}>Expires: 12/26</Text>
+          </View>
+        </View>
+
+        <View style={styles.btnwrappr}>
+          <StandardButton title={"Message"} />
+        </View>
       </View>
     </Modal>
   );

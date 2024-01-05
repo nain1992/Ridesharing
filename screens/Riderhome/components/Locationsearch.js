@@ -14,7 +14,7 @@ import StandardButton from "../../../globalComponents/StandardButton";
 import { getPercent } from "../../../middleware";
 
 const Locationsearch = (props) => {
-  let { onPress } = props;
+  let { onPress, onBtnPress } = props;
 
   let { width, height } = useWindowDimensions();
   let styles = _styles({ width, height });
@@ -29,6 +29,7 @@ const Locationsearch = (props) => {
         <Globalicons image={require("../../../assets/icons/heart.png")} />
       </View>
       <StandardButton
+        onPress={onBtnPress}
         customStyles={{ width: getPercent(80, width) }}
         title={"Next"}
       />

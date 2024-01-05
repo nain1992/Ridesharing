@@ -38,7 +38,10 @@ const Transport = (props) => {
           />
           <Text style={styles.carttitletext}>Cars</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.carbody}>
+        <TouchableOpacity
+          onPress={() => props?.navigation?.navigate("Locationscreen")}
+          style={styles.carbody}
+        >
           <Image
             source={require("../../assets/images/bus.png")}
             style={{ height: "50%", width: "50%" }}
@@ -46,7 +49,10 @@ const Transport = (props) => {
           />
           <Text style={styles.carttitletext}>Bus</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.carbody}>
+        <TouchableOpacity
+          onPress={() => props?.navigation?.navigate("Complain")}
+          style={styles.carbody}
+        >
           <Image
             source={require("../../assets/images/Cycle.png")}
             style={{ height: "50%", width: "50%" }}
@@ -54,7 +60,10 @@ const Transport = (props) => {
           />
           <Text style={styles.carttitletext}>Cycble</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.carbody}>
+        <TouchableOpacity
+          onPress={() => props?.navigation?.navigate("Riderhome")}
+          style={styles.carbody}
+        >
           <Image
             source={require("../../assets/images/Taxi.png")}
             style={{ height: "50%", width: "50%" }}

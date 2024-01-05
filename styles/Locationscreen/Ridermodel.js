@@ -7,12 +7,13 @@ import { light } from "../../scheme";
 export const styles = ({ width, height }) =>
   StyleSheet.create({
     container: {
-      height: getPercent(60, height),
+      height: getPercent(55, height),
       width: getPercent(100, width),
       alignSelf: "center",
       position: "absolute",
       bottom: 0,
       borderTopRightRadius: 20,
+      justifyContent: "space-around",
       borderTopLeftRadius: 20,
       backgroundColor: light?.background,
       padding: 10,
@@ -20,42 +21,22 @@ export const styles = ({ width, height }) =>
     closeiconbody: {
       alignSelf: "flex-end",
     },
-    selecttext: {
-      fontFamily: "Medium",
-      fontSize: rf(18),
-      color: light?.standardtext,
-      textAlign: "center",
-    },
-    pickuplocationbody: {
-      height: getPercent(6.5, height),
-      width: getPercent(90, width),
-      borderColor: light?.fieldbody,
-      borderRadius: 5,
-      borderWidth: 1,
-      flexDirection: "row",
-      alignItems: "center",
-      paddingHorizontal: 10,
-      marginVertical: 5,
-      alignSelf: "center",
-    },
-    inputstyles: {
-      fontFamily: "Medium",
-      fontSize: rf(12),
-      color: light?.standardtext,
-      width: "100%",
-      paddingLeft: 10,
-    },
 
     recenttext: {
       fontFamily: "Medium",
       fontSize: rf(14),
       color: light?.standardtext,
-      marginTop: 10,
     },
     recentbody: {
       flexDirection: "row",
       alignItems: "center",
-      marginVertical: 5,
+      height: getPercent(8, height),
+      width: getPercent(90, width),
+      borderWidth: 1,
+      borderColor: light.btnbody,
+      borderRadius: 10,
+      alignSelf: "center",
+      paddingHorizontal: 10,
     },
     textbody: {
       flex: 1,
@@ -71,13 +52,51 @@ export const styles = ({ width, height }) =>
       fontSize: rf(11),
       color: light?.fieldtext,
     },
-    kmtext: {
-      fontFamily: "Regular",
-      fontSize: rf(11),
+
+    price: {
+      fontFamily: "Medium",
+      fontSize: rf(16),
       color: light?.standardtext,
     },
     btnwrappr: {
       alignItems: "center",
-      marginTop: 10,
+    },
+    cardpicturebody: {
+      height: getPercent(5, height),
+      width: getPercent(8, width),
+      overflow: "hidden",
+    },
+    profilepic: {
+      height: getPercent(6, height),
+      width: getPercent(6, height),
+      overflow: "hidden",
+      borderRadius: 10,
+    },
+    carpic: {
+      height: getPercent(6, height),
+      width: getPercent(12, height),
+      overflow: "hidden",
+      borderRadius: 10,
+    },
+    userdetailswrapper: {
+      flexDirection: "row",
+      alignItems: "center",
+      justifyContent: "space-between",
+      marginVertical: 10,
+      borderTopWidth: 1,
+      borderBottomWidth: 1,
+      borderColor: light?.fieldtext,
+      paddingVertical: 10,
+    },
+    nametext: {
+      fontFamily: "Medium",
+      fontSize: rf(13),
+      color: light?.standardtext,
+    },
+    meterstext: {
+      fontFamily: "Medium",
+      fontSize: rf(9),
+      color: light?.fieldtext,
+      marginLeft: 5,
     },
   });

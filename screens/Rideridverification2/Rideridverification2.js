@@ -6,7 +6,7 @@ import Commonheader from "../../globalComponents/Commonheader";
 import Globalicons from "../../globalComponents/Globalicons";
 import StandardButton from "../../globalComponents/StandardButton";
 
-const Rideridverification = (props) => {
+const Rideridverification2 = (props) => {
   let {} = props;
   let { width, height } = useWindowDimensions();
   let styles = _styles({ width, height });
@@ -45,7 +45,7 @@ const Rideridverification = (props) => {
         <StandardButton
           // onPress={() => props?.navigation?.navigate("Riderhome")}
           onPress={() => props?.navigation?.navigate("Documentphoto")}
-          title={"Take a photo of front side"}
+          title={"Take a photo of Back side"}
         />
       </View>
     </View>
@@ -55,4 +55,4 @@ const Rideridverification = (props) => {
 const mapStateToProps = (state) => ({
   errors: state.errors.errors,
 });
-export default connect(mapStateToProps, {})(Rideridverification);
+export default connect(mapStateToProps, {})(Rideridverification2);

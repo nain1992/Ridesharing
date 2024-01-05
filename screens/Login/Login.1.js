@@ -6,7 +6,6 @@ import {
   TouchableOpacity,
   Image,
 } from "react-native";
-import { connect } from "react-redux";
 import { styles as _styles } from "../../styles/Login/main";
 import Globalheader from "../../globalComponents/Globalheader";
 import Globalfields from "../../globalComponents/Globalfields";
@@ -14,7 +13,7 @@ import Globalicons from "../../globalComponents/Globalicons";
 import StandardButton from "../../globalComponents/StandardButton";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
-const Login = (props) => {
+export const Login = (props) => {
   let {} = props;
   let { width, height } = useWindowDimensions();
   let styles = _styles({ width, height });
@@ -28,7 +27,7 @@ const Login = (props) => {
     require("../../assets/icons/twitter.png"),
   ];
   const _HandleLogin = () => {
-    // props?.navigation?.navigate("Home");
+    props?.navigation?.navigate("Home");
     props?.navigation?.navigate("Riderhome");
   };
   return (
@@ -93,8 +92,3 @@ const Login = (props) => {
     </View>
   );
 };
-
-const mapStateToProps = (state) => ({
-  errors: state.errors.errors,
-});
-export default connect(mapStateToProps, {})(Login);
