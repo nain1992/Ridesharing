@@ -22,7 +22,7 @@ const History = (props) => {
   let styles = _styles({ width, height });
 
   const [activebtn, setActivebtn] = useState(0);
-  const [upcoming, setUpcoming] = useState(false);
+  const [upcoming, setUpcoming] = useState(true);
   const [completed, setCompleted] = useState(false);
   const [cancelled, setCancelled] = useState(false);
 

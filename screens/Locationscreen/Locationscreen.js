@@ -8,25 +8,21 @@ import {
   ScrollView,
 } from "react-native";
 import { connect } from "react-redux";
-import { styles as _styles } from "../../styles/Home/main";
+import { styles as _styles } from "../../styles/Locationscreen/main";
 import MapView, { Marker } from "react-native-maps";
 import * as Location from "expo-location";
-import Homeheader from "./components/Homeheader";
-import Bottommenu from "../../globalComponents/Bottommenu";
-import Locationsearch from "./components/Locationsearch";
-import Selectaddressmodel from "./components/Selectaddressmodel";
-import Sidemenu from "./components/Sidemenu";
-import Selecttimemodel from "./components/Selecttimemodel";
+import Homeheader from "../Home/components/Homeheader";
+import Sidemenu from "../Home/components/Sidemenu";
+import Ridemodel from "./components/Ridemodel";
 
-const Home = (props) => {
+const Locationscreen = (props) => {
   let {} = props;
 
   let { width, height } = useWindowDimensions();
   let styles = _styles({ width, height });
   const [location, setLocation] = useState(null);
-  const [ismodelvisible, setIsmodelvisible] = useState(false);
+  const [ismodelvisible, setIsmodelvisible] = useState(true);
   const [issidemodelvisible, setIssidemodelvisible] = useState(false);
-  const [istimevisible, setIstimevisible] = useState(false);
 
   useEffect(() => {
     (async () => {
@@ -68,29 +64,15 @@ const Home = (props) => {
           </MapView>
         </View>
       )}
-      <Bottommenu active={"Home"} navigation={props?.navigation} />
-      <Locationsearch onPress={() => setIsmodelvisible(true)} />
 
       {ismodelvisible && (
-        <Selectaddressmodel
-          onclosepress={() => setIsmodelvisible(false)}
-          onBtnPress={() => {
-            setIsmodelvisible(false);
-            setIstimevisible(true);
-          }}
-        />
+        <Ridemodel onclosepress={() => setIsmodelvisible(false)} />
       )}
       {issidemodelvisible && (
-        <Sidemenu onBackPress={() => setIssidemodelvisible(false)} />
-      )}
-
-      {istimevisible && (
-        <Selecttimemodel
-          onclosepress={() => setIstimevisible(false)}
-          onConfirmPress={() => {
-            setIstimevisible(false);
-            props?.navigation?.navigate("Addcar");
-          }}
+        <Sidemenu
+          setIssidemodelvisible={setIssidemodelvisible}
+          onBackPress={() => setIssidemodelvisible(false)}
+          navigation={props?.navigation}
         />
       )}
     </View>
@@ -100,4 +82,4 @@ const Home = (props) => {
 const mapStateToProps = (state) => ({
   errors: state.errors.errors,
 });
-export default connect(mapStateToProps, {})(Home);
+export default connect(mapStateToProps, {})(Locationscreen);

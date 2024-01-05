@@ -23,6 +23,10 @@ const Sidemenu = (props) => {
     {
       icon: require("../../../assets/sidemenu/1.png"),
       title: "Settings",
+      onPress: () => {
+        props?.setIssidemodelvisible(false);
+        props?.navigation?.navigate("Settings");
+      },
     },
     {
       icon: require("../../../assets/sidemenu/2.png"),
@@ -76,7 +80,11 @@ const Sidemenu = (props) => {
         </View>
         {options?.map((item, index) => {
           return (
-            <TouchableOpacity key={index} style={styles.optionswrapper}>
+            <TouchableOpacity
+              onPress={item?.onPress}
+              key={index}
+              style={styles.optionswrapper}
+            >
               <View style={styles.iconbody}>
                 <Image
                   source={item?.icon}

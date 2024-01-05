@@ -10,38 +10,48 @@ import {
   TextInput,
 } from "react-native";
 import { connect } from "react-redux";
-import { styles as _styles } from "../../../styles/Home/Selectaddressmodel";
+import { styles as _styles } from "../../../styles/Locationscreen/Ridermodel";
 import { AntDesign } from "@expo/vector-icons";
 import { light } from "../../../scheme";
 import Globalicons from "../../../globalComponents/Globalicons";
 import StandardButton from "../../../globalComponents/StandardButton";
 
-const selecttitmemodel = (props) => {
-  let { onPress, onclosepress, onConfirmPress } = props;
+const Selectaddressmodel = (props) => {
+  let { onPress, onclosepress } = props;
 
   let { width, height } = useWindowDimensions();
   let styles = _styles({ width, height });
 
   let recent = [
     {
-      icon: require("../../../assets/icons/15.png"),
-      lable: "5:00",
-      km: "PM",
+      icon: require("../../../assets/icons/11.png"),
+      lable: "Office",
+      address: "2972 Westheimer Rd. Santa Ana, Illinois 85486",
+      km: "2.7 km",
     },
     {
-      icon: require("../../../assets/icons/15.png"),
-      lable: "5:00",
-      km: "PM",
+      icon: require("../../../assets/icons/11.png"),
+      lable: "Office",
+      address: "2972 Westheimer Rd. Santa Ana, Illinois 85486",
+      km: "2.7 km",
     },
     {
-      icon: require("../../../assets/icons/15.png"),
-      lable: "5:00",
-      km: "PM",
+      icon: require("../../../assets/icons/11.png"),
+      lable: "Office",
+      address: "2972 Westheimer Rd. Santa Ana, Illinois 85486",
+      km: "2.7 km",
     },
     {
-      icon: require("../../../assets/icons/15.png"),
-      lable: "5:00",
-      km: "PM",
+      icon: require("../../../assets/icons/11.png"),
+      lable: "Office",
+      address: "2972 Westheimer Rd. Santa Ana, Illinois 85486",
+      km: "2.7 km",
+    },
+    {
+      icon: require("../../../assets/icons/11.png"),
+      lable: "Office",
+      address: "2972 Westheimer Rd. Santa Ana, Illinois 85486",
+      km: "2.7 km",
     },
   ];
   return (
@@ -51,18 +61,25 @@ const selecttitmemodel = (props) => {
         <TouchableOpacity onPress={onclosepress} style={styles.closeiconbody}>
           <AntDesign name="close" size={20} color={light?.standardtext} />
         </TouchableOpacity>
-        <Text style={styles.selecttext}>Select time</Text>
         <View style={styles.pickuplocationbody}>
-          <Globalicons image={require("../../../assets/icons/15.png")} />
+          <Globalicons image={require("../../../assets/icons/pick.png")} />
           <TextInput
-            placeholder="6:50"
+            placeholder="From"
             placeholderTextColor={light?.fieldbody}
             style={styles.inputstyles}
             multiline
           />
         </View>
-
-        <Text style={styles.recenttext}>Related times</Text>
+        <View style={styles.pickuplocationbody}>
+          <Globalicons image={require("../../../assets/icons/drop.png")} />
+          <TextInput
+            placeholder="To"
+            placeholderTextColor={light?.fieldbody}
+            style={styles.inputstyles}
+            multiline
+          />
+        </View>
+        <Text style={styles.recenttext}>Recent Search</Text>
         <ScrollView showsVerticalScrollIndicator={false}>
           {recent?.map((item, index) => {
             return (
@@ -70,13 +87,14 @@ const selecttitmemodel = (props) => {
                 <Globalicons image={item?.icon} />
                 <View style={styles.textbody}>
                   <Text style={styles.recentlocationstext}>{item?.lable}</Text>
+                  <Text style={styles.recentaddresstext}>{item?.address}</Text>
                 </View>
                 <Text style={styles.kmtext}>{item?.km}</Text>
               </View>
             );
           })}
           <View style={styles.btnwrappr}>
-            <StandardButton onPress={onConfirmPress} title={"Confirm Time"} />
+            <StandardButton title={"Confirm Location"} />
           </View>
         </ScrollView>
       </View>
@@ -87,4 +105,4 @@ const selecttitmemodel = (props) => {
 const mapStateToProps = (state) => ({
   errors: state.errors.errors,
 });
-export default connect(mapStateToProps, {})(selecttitmemodel);
+export default connect(mapStateToProps, {})(Selectaddressmodel);

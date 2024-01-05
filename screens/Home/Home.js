@@ -76,7 +76,11 @@ const Home = (props) => {
         <Selectaddressmodel onclosepress={() => setIsmodelvisible(false)} />
       )}
       {issidemodelvisible && (
-        <Sidemenu onBackPress={() => setIssidemodelvisible(false)} />
+        <Sidemenu
+          setIssidemodelvisible={setIssidemodelvisible}
+          onBackPress={() => setIssidemodelvisible(false)}
+          navigation={props?.navigation}
+        />
       )}
     </View>
   );

@@ -31,12 +31,27 @@ import Changepassword from "../screens/Changepassword/Changepassword";
 import Privacypolicy from "../screens/Privacypolicy/Privacypolicy";
 import Deleteaccount from "../screens/Deleteaccount/Deleteaccount";
 import Contactus from "../screens/Contactus/Contactus";
+import Complain from "../screens/Complain/Complain";
+import Inbox from "../screens/Inbox/Inbox";
+import Chat from "../screens/Chat/Chat";
+import Profile from "../screens/Profile/Profile";
+import Addcar from "../screens/Addcar/Addcar";
+import Request from "../screens/Request/Request";
+import Locationscreen from "../screens/Locationscreen/Locationscreen";
 
 const { Navigator, Screen } = createStackNavigator();
 
 function AppNavigation() {
   return (
     <Navigator screenOptions={{ headerShown: false, animationEnabled: false }}>
+      <Screen name="Locationscreen" component={Locationscreen} />
+      <Screen name="Request" component={Request} />
+      <Screen name="Addcar" component={Addcar} />
+      <Screen name="Riderhome" component={Riderhome} />
+      <Screen name="Inbox" component={Inbox} />
+      <Screen name="Profile" component={Profile} />
+      <Screen name="Chat" component={Chat} />
+      <Screen name="Complain" component={Complain} />
       <Screen name="Settings" component={Settings} />
       <Screen name="Deleteaccount" component={Deleteaccount} />
       <Screen name="Contactus" component={Contactus} />
@@ -46,7 +61,6 @@ function AppNavigation() {
       <Screen name="Requestbooking" component={Requestbooking} />
       <Screen name="Availablecars" component={Availablecars} />
       <Screen name="Onboarding1" component={Onboarding1} />
-      <Screen name="Riderhome" component={Riderhome} />
       <Screen name="Home" component={Home} />
       <Screen name="Notifications" component={Notifications} />
       <Screen name="Onboarding2" component={Onboarding2} />

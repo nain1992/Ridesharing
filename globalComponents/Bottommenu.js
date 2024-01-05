@@ -31,17 +31,17 @@ const Bottommenu = (props) => {
     },
     {
       image:
-        active === "Home"
-          ? require("../assets/bottommenu/3.png")
-          : require("../assets/bottommenu/7.png"),
-      onPress: () => props?.navigation?.navigate(""),
+        active === "Inbox"
+          ? require("../assets/bottommenu/7.png")
+          : require("../assets/bottommenu/3.png"),
+      onPress: () => props?.navigation?.navigate("Inbox"),
     },
     {
       image:
-        active === "Home"
-          ? require("../assets/bottommenu/4.png")
-          : require("../assets/bottommenu/8.png"),
-      onPress: () => props?.navigation?.navigate(""),
+        active === "Profile"
+          ? require("../assets/bottommenu/8.png")
+          : require("../assets/bottommenu/4.png"),
+      onPress: () => props?.navigation?.navigate("Profile"),
     },
   ];
 
