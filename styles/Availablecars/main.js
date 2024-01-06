@@ -11,7 +11,7 @@ export const styles = ({ width, height }) =>
       backgroundColor: light?.background,
     },
     lablewrapper: {
-      paddingHorizontal: getPercent(5, height),
+      paddingHorizontal: getPercent(5, width),
     },
     selecttext: {
       fontFamily: "SemiBold",

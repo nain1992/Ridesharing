@@ -38,11 +38,11 @@ export const styles = ({ width, height }) =>
       marginVertical: 5,
       flexDirection: "row",
       justifyContent: "space-between",
+      alignItems: "center",
     },
     pickerdropdown: {
-      height: getPercent(20, height),
       width: getPercent(30, width),
-      left: 15,
+      left: 10,
       borderRadius: 10,
       backgroundColor: light?.background,
       padding: 10,
@@ -68,6 +68,6 @@ export const styles = ({ width, height }) =>
     titletext: {
       fontFamily: "Regular",
       fontSize: rf(13),
-      color: light?.standardtext,
+      color: light?.fieldbody,
     },
   });

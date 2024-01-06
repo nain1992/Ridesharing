@@ -9,13 +9,13 @@ import {
   Modal,
 } from "react-native";
 import { connect } from "react-redux";
-import { styles as _styles } from "../../../styles/Requestbooking/Paymentsuccessmodel";
+import { styles as _styles } from "../../../styles/Requestbooking/Thanksmodel";
 import { AntDesign } from "@expo/vector-icons";
 import { light } from "../../../scheme";
 import StandardButton from "../../../globalComponents/StandardButton";
 import { getPercent } from "../../../middleware";
 
-const Paymentsuccessmodel = (props) => {
+const Thanksmodel = (props) => {
   let { onPress, onClosepress } = props;
 
   let { width, height } = useWindowDimensions();
@@ -37,27 +37,17 @@ const Paymentsuccessmodel = (props) => {
           />
         </View>
         <View>
-          <Text style={styles.pyamenttext}>Payment Success</Text>
+          <Text style={styles.pyamenttext}>Thank you</Text>
           <Text style={styles.yourmoneytext}>
-            Your money has been successfully sent to Sergio Ramasis
+            Thank you for your valuable feedback and tip
           </Text>
         </View>
-        <View>
-          <Text style={styles.amounttext}>Amount</Text>
-          <Text style={styles.pricetext}>$220</Text>
-        </View>
-        <View>
-          <Text style={styles.amounttext}>How is your trip?</Text>
-          <Text style={styles.yourmoneytext}>
-            Your money has been successfully sent to Sergio Ramasis
-          </Text>
-        </View>
+
         <View style={styles.btnwrapper}>
           <StandardButton
             onPress={onPress}
             customStyles={{ width: getPercent(80, width) }}
-            cus
-            title={"Please Feedback"}
+            title={"Back Home"}
           />
         </View>
       </View>
@@ -68,4 +58,4 @@ const Paymentsuccessmodel = (props) => {
 const mapStateToProps = (state) => ({
   errors: state.errors.errors,
 });
-export default connect(mapStateToProps, {})(Paymentsuccessmodel);
+export default connect(mapStateToProps, {})(Thanksmodel);

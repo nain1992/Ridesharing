@@ -41,6 +41,7 @@ import Locationscreen from "../screens/Locationscreen/Locationscreen";
 import Documentphoto from "../screens/Documentphoto/Documentphoto";
 import Rideridverification2 from "../screens/Rideridverification2/Rideridverification2";
 import Lisenceverification from "../screens/Lisenceverification/Lisenceverification";
+import Documentbackphoto from "../screens/Documentbackphoto/Documentbackphoto";
 
 const { Navigator, Screen } = createStackNavigator();
 
@@ -51,6 +52,7 @@ function AppNavigation() {
       <Screen name="Lisenceverification" component={Lisenceverification} />
       <Screen name="Rideridverification" component={Rideridverification} />
       <Screen name="Documentphoto" component={Documentphoto} />
+      <Screen name="Documentbackphoto" component={Documentbackphoto} />
       <Screen name="Rideridverification2" component={Rideridverification2} />
       <Screen name="Locationscreen" component={Locationscreen} />
       <Screen name="Request" component={Request} />

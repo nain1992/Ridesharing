@@ -44,7 +44,7 @@ const Rideridverification2 = (props) => {
       <View style={styles.btnwrapper}>
         <StandardButton
           // onPress={() => props?.navigation?.navigate("Riderhome")}
-          onPress={() => props?.navigation?.navigate("Documentphoto")}
+          onPress={() => props?.navigation?.navigate("Documentbackphoto")}
           title={"Take a photo of Back side"}
         />
       </View>

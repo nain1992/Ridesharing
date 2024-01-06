@@ -13,11 +13,16 @@ import { Entypo, Ionicons } from "@expo/vector-icons";
 import { light } from "../../scheme";
 import StandardButton from "../../globalComponents/StandardButton";
 import { getPercent } from "../../middleware";
+import { useState } from "react";
 
 const Changepassword = (props) => {
   let {} = props;
   let { width, height } = useWindowDimensions();
   let styles = _styles({ width, height });
+
+  const [oldpassword, setOldpassword] = useState(false);
+  const [newpassword, setNewpassword] = useState(false);
+  const [confirmpasword, setConfirmpasword] = useState(false);
 
   return (
     <View style={styles.container}>

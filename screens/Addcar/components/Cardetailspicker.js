@@ -10,7 +10,7 @@ import { connect } from "react-redux";
 import { styles as _styles } from "../../../styles/Addcar/Cardetailspicker";
 import { light } from "../../../scheme";
 import { useState } from "react";
-import { Entypo } from "@expo/vector-icons";
+import { AntDesign } from "@expo/vector-icons";
 
 const Cardetailspicker = (props) => {
   let { title } = props;
@@ -30,11 +30,7 @@ const Cardetailspicker = (props) => {
         style={styles.pikeropener}
       >
         <Text style={styles.inputstyles}>{complainreason}</Text>
-        <Entypo
-          name="chevron-small-down"
-          size={24}
-          color={light?.standardtext}
-        />
+        <AntDesign name="caretdown" size={12} color={light?.standardtext} />
       </TouchableOpacity>
       {isopen ? (
         <View style={styles.pickerdropdown}>

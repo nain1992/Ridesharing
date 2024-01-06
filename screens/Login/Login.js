@@ -18,7 +18,7 @@ const Login = (props) => {
   let {} = props;
   let { width, height } = useWindowDimensions();
   let styles = _styles({ width, height });
-
+  const data = props?.route?.params;
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -28,8 +28,9 @@ const Login = (props) => {
     require("../../assets/icons/twitter.png"),
   ];
   const _HandleLogin = () => {
-    // props?.navigation?.navigate("Home");
-    props?.navigation?.navigate("Riderhome");
+    data
+      ? props?.navigation?.navigate("Riderhome")
+      : props?.navigation?.navigate("Home");
   };
   return (
     <View style={styles.container}>
@@ -50,6 +51,7 @@ const Login = (props) => {
             placeholder="Password"
             onChangeText={(val) => setPassword(val)}
             value={password}
+            secureTextEntry
           />
           <Text style={styles.forgottext}>Forgot Password?</Text>
         </View>

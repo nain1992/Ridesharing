@@ -16,6 +16,7 @@ export const styles = ({ width, height }) =>
       borderRadius: 5,
     },
     camera: {
-      flex: 1,
+      height: getPercent(60, height),
+      width: getPercent(90, width),
     },
   });

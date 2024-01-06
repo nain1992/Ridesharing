@@ -14,7 +14,8 @@ const Riderwelcome = (props) => {
   let {} = props;
   let { width, height } = useWindowDimensions();
   let styles = _styles({ width, height });
-
+  console.log(routeType);
+  let routeType = "rider";
   return (
     <View style={styles.container}>
       <View style={styles.framewrapper}>
@@ -39,7 +40,7 @@ const Riderwelcome = (props) => {
           title={"Create an acocunt"}
         />
         <StandardButton
-          onPress={() => props?.navigation?.navigate("Login")}
+          onPress={() => props?.navigation?.navigate("Login", routeType)}
           customStyles={styles.custom}
           textStyles={{
             color: light?.btnbody,

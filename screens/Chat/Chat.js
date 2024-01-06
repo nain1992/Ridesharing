@@ -24,7 +24,7 @@ const Chat = (props) => {
 
   return (
     <View style={styles.container}>
-      <Notificationsheader />
+      <Notificationsheader title={"Chat"} navigation={props?.navigation} />
       {[1, 3, 3]?.map((item, index) => {
         return (
           <Incomingmsg

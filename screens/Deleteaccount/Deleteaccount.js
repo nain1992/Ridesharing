@@ -11,6 +11,7 @@ import Notificationsheader from "../Notifications/components/Notificationsheader
 import { Ionicons } from "@expo/vector-icons";
 import { light } from "../../scheme";
 import StandardButton from "../../globalComponents/StandardButton";
+import { getPercent } from "../../middleware";
 
 const Deleteaccount = (props) => {
   let {} = props;
@@ -23,12 +24,14 @@ const Deleteaccount = (props) => {
         title={"Delete Account"}
         navigation={props?.navigation}
       />
-      <Text style={styles.policytext}>
-        Are you sure you want to delete your account? Please read how account
-        deletion will affect.{"\n"}Deleting your account removes personal
-        information our database. Tour email becomes permanently reserved and
-        same email cannot be re-use to register a new account.
-      </Text>
+      <View style={{ paddingHorizontal: getPercent(5, width) }}>
+        <Text style={styles.policytext}>
+          Are you sure you want to delete your account? Please read how account
+          deletion will affect.{"\n"}Deleting your account removes personal
+          information our database. Tour email becomes permanently reserved and
+          same email cannot be re-use to register a new account.
+        </Text>
+      </View>
       <View style={styles.btnwraper}>
         <StandardButton
           customStyles={{

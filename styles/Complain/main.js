@@ -27,7 +27,7 @@ export const styles = ({ width, height }) =>
     input: {
       width: "100%",
       fontFamily: "Regular",
-      fontSize: rf(12),
+      fontSize: rf(11),
       color: light?.standardtext,
     },
 

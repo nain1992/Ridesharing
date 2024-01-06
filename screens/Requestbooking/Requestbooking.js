@@ -16,6 +16,7 @@ import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view
 import Paymentmethod from "./components/Paymentmethod";
 import StandardButton from "../../globalComponents/StandardButton";
 import Paymentsuccessmodel from "./components/Paymentsuccessmodel";
+import Thanksmodel from "./components/Thanksmodel";
 
 const Requestbooking = (props) => {
   let {} = props;
@@ -24,6 +25,7 @@ const Requestbooking = (props) => {
   let styles = _styles({ width, height });
 
   const [ispaymanetmodelvisible, setIspaymanetmodelvisible] = useState(false);
+  const [isthanksmodelvisible, setisThanksmodelvisible] = useState(false);
 
   return (
     <View style={styles.container}>
@@ -99,6 +101,16 @@ const Requestbooking = (props) => {
         {ispaymanetmodelvisible && (
           <Paymentsuccessmodel
             onClosepress={() => setIspaymanetmodelvisible(false)}
+            onPress={() => {
+              setIspaymanetmodelvisible(false);
+              setisThanksmodelvisible(true);
+            }}
+          />
+        )}
+        {isthanksmodelvisible && (
+          <Thanksmodel
+            onClosepress={() => setIspaymanetmodelvisible(false)}
+            onPress={() => props?.navigation?.navigate("Riderhome")}
           />
         )}
       </KeyboardAwareScrollView>

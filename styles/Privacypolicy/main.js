@@ -14,7 +14,6 @@ export const styles = ({ width, height }) =>
       fontFamily: "Medium",
       fontSize: rf(16),
       color: light?.labletext,
-      paddingLeft: getPercent(5, width),
       marginVertical: 15,
     },
     policytext: {
@@ -22,7 +21,6 @@ export const styles = ({ width, height }) =>
       fontSize: rf(14),
       color: light?.fieldbody,
       textAlign: "justify",
-      paddingHorizontal: getPercent(5, width),
       marginTop: getPercent(3, height),
     },
     btnwraper: {

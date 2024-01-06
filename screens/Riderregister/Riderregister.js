@@ -64,7 +64,13 @@ const Riderregister = (props) => {
         </View>
         <View style={styles.alreadywrapper}>
           <Text style={styles.alreadytext}>
-            Already have an account? <Text style={styles.signup}>Sign in</Text>
+            Already have an account?{" "}
+            <Text
+              onPress={() => props?.navigation?.navigate("Login")}
+              style={styles.signup}
+            >
+              Sign in
+            </Text>
           </Text>
         </View>
       </KeyboardAwareScrollView>

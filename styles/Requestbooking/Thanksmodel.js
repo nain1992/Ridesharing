@@ -7,11 +7,11 @@ import { light } from "../../scheme";
 export const styles = ({ width, height }) =>
   StyleSheet.create({
     container: {
-      height: getPercent(60, height),
+      height: getPercent(40, height),
       width: getPercent(90, width),
       borderRadius: 10,
       position: "absolute",
-      top: getPercent(20, height),
+      top: getPercent(30, height),
       backgroundColor: light?.background,
       alignSelf: "center",
       padding: 10,
@@ -42,12 +42,6 @@ export const styles = ({ width, height }) =>
       fontFamily: "Regular",
       fontSize: rf(11),
       color: light.fieldtext,
-      textAlign: "center",
-    },
-    amounttext: {
-      fontFamily: "Medium",
-      fontSize: rf(12),
-      color: light.standardtext,
       textAlign: "center",
     },
   });

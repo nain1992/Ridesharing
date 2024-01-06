@@ -13,6 +13,12 @@ export const styles = ({ width, height }) =>
     textwrapper: {
       paddingLeft: getPercent(5, width),
     },
+    textstyles: {
+      fontFamily: "Medium",
+      fontSize: rf(18),
+      color: light?.lable,
+      textAlign: "center",
+    },
     lable: {
       fontFamily: "Medium",
       fontSize: rf(14),
